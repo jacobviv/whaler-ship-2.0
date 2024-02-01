@@ -5,8 +5,8 @@ class Islet {
         this.ctx = ctx
         this.canvasSize = canvasSize
 
-        // this.image = new Image()
-        // this.image.src = './img/islet.png'
+        this.image = new Image()
+        this.image.src = './img/islet.png'
 
         this.isletSize = { w: 120, h: 100 }
         this.isletPos = {
@@ -19,8 +19,12 @@ class Islet {
     }
 
     draw() {
-        this.ctx.fillStyle = 'black'
-        this.ctx.fillRect(this.isletPos.x, this.isletPos.y, this.isletSize.w, this.isletSize.h)
+        this.ctx.drawImage(
+            this.image,
+            this.isletPos.x,
+            this.isletPos.y,
+            this.isletSize.w,
+            this.isletSize.h)
     }
     move() {
         this.isletPos.x -= this.vel

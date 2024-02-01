@@ -5,7 +5,7 @@ class WhalerShip {
         this.ctx = ctx
         this.canvasSize = canvasSize
 
-        this.whalerShipSize = { w: 64, h: 45 }
+        this.whalerShipSize = { w: 112, h: 94 }
         this.whalerShipPos = {
             x: this.canvasSize.w / 2 - this.whalerShipSize.w / 2,
             y: this.canvasSize.h / 2 - this.whalerShipSize.h / 2
@@ -27,18 +27,16 @@ class WhalerShip {
         }
 
         this.image = new Image()
-        this.image.src = './img/whaler-ship-sprite.png'
-        this.image.frames = 9
-        this.image.framesIndex = 0
+        this.image.src = './img/whalership.png'
+        // this.image.frames = 9
+        // this.image.framesIndex = 0
     }
 
-    draw(framesCounter) {
+    draw() {
         this.ctx.drawImage(
             this.image,
-            this.image.width / this.image.frames * this.image.framesIndex,
-            0,
-            this.image.width / this.image.frames,
-            this.image.height,
+            // this.image.width,
+            // this.image.height,
             this.whalerShipPos.x,
             this.whalerShipPos.y,
             this.whalerShipSize.w,
@@ -46,7 +44,7 @@ class WhalerShip {
         this.move()
         this.clearHarpoons()
         this.harpoons.forEach(elm => elm.draw())
-        this.animate(framesCounter)
+        // this.animate(framesCounter)
     }
 
     move() {

@@ -5,8 +5,8 @@ class Island {
         this.ctx = ctx
         this.canvasSize = canvasSize
 
-        // this.image = new Image()
-        // this.image.src = './img/island.png'
+        this.image = new Image()
+        this.image.src = './img/island.png'
 
         this.islandSize = { w: 200, h: 200 }
         this.islandPos = {
@@ -19,8 +19,14 @@ class Island {
     }
 
     draw() {
-        this.ctx.fillStyle = 'black'
-        this.ctx.fillRect(this.islandPos.x, this.islandPos.y, this.islandSize.w, this.islandSize.h)
+        // this.ctx.fillStyle = 'black'
+        // this.ctx.fillRect(this.islandPos.x, this.islandPos.y, this.islandSize.w, this.islandSize.h)
+        this.ctx.drawImage(
+            this.image,
+            this.islandPos.x,
+            this.islandPos.y,
+            this.islandSize.w,
+            this.islandSize.h)
     }
     move() {
         this.islandPos.x -= this.vel

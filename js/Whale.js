@@ -10,7 +10,7 @@ class Whale {
 
         this.margin = { x: 200, y: 50 }
 
-        this.whaleSize = { w: 85, h: 59 }
+        this.whaleSize = { w: 120, h: 50 }
         this.whalePos = {
             x: Math.random() * (this.canvasSize.w - this.whaleSize.w * 2) + this.margin.x,
             y: Math.random() * (this.canvasSize.h - this.whaleSize.h * 2) + this.margin.y

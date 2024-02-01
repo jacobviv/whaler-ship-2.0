@@ -15,6 +15,7 @@ const whaleShipApp = {
     FPS: 60,
     framesIndex: 0,
     interval: undefined,
+    borders: undefined,
     background: undefined,
     whalerShip: undefined,
     gloryInterval: undefined,
@@ -131,6 +132,7 @@ const whaleShipApp = {
         this.whales = []
         this.harpoons = []
         this.pirates = []
+        this.borders = new Borders(this.ctx, this.canvasSize)
     },
 
     drawAll() {
@@ -142,6 +144,7 @@ const whaleShipApp = {
         this.islets.forEach(elm => elm.draw())
         this.islands.forEach(elm => elm.draw())
         this.whalerShip.draw(this.framesIndex)
+        this.borders.draw()
     },
 
     moveAll() {
@@ -210,7 +213,7 @@ const whaleShipApp = {
                 this.whalerShip.whalerShipPos.y + this.whalerShip.whalerShipSize.h / 2 <= elm.islandPos.y + elm.islandSize.h) {
                 const islandCollided = this.islands.indexOf(elm)
                 this.islands.splice(islandCollided, 1)
-                this.lifesCounter -= 1
+                // this.lifesCounter -= 1
                 document.querySelector('#lifes-counter').innerHTML = Math.floor(this.lifesCounter)
             }
         })
@@ -225,7 +228,7 @@ const whaleShipApp = {
                 this.whalerShip.whalerShipPos.y + this.whalerShip.whalerShipSize.h / 2 <= elm.isletPos.y + elm.isletSize.h) {
                 const isletCollided = this.islets.indexOf(elm)
                 this.islets.splice(isletCollided, 1)
-                this.lifesCounter -= 1
+                // this.lifesCounter -= 1
                 document.querySelector('#lifes-counter').innerHTML = Math.floor(this.lifesCounter)
             }
         })
@@ -240,7 +243,7 @@ const whaleShipApp = {
                 this.whalerShip.whalerShipPos.y + this.whalerShip.whalerShipSize.h / 2 <= elm.rockPos.y + elm.rockSize.h) {
                 const rockCollided = this.rocks.indexOf(elm)
                 this.rocks.splice(rockCollided, 1)
-                this.lifesCounter -= 1
+                // this.lifesCounter -= 1
                 document.querySelector('#lifes-counter').innerHTML = Math.floor(this.lifesCounter)
             }
         })
@@ -276,7 +279,7 @@ const whaleShipApp = {
                 this.whalerShip.whalerShipPos.y + this.whalerShip.whalerShipSize.h / 2 <= elm.whalePos.y + elm.whaleSize.h) {
                 const whaleCollided = this.whales.indexOf(elm)
                 this.whales.splice(whaleCollided, 1)
-                this.lifesCounter -= 1
+                // this.lifesCounter -= 1
                 document.querySelector('#lifes-counter').innerHTML = Math.floor(this.lifesCounter)
             }
         })
@@ -309,7 +312,7 @@ const whaleShipApp = {
                 this.whalerShip.whalerShipPos.y + this.whalerShip.whalerShipSize.h / 2 <= elm.piratePos.y + elm.pirateSize.h) {
                 const pirateCollided = this.pirates.indexOf(elm)
                 this.pirates.splice(pirateCollided, 1)
-                this.lifesCounter -= 1
+                // this.lifesCounter -= 1
                 document.querySelector('#lifes-counter').innerHTML = Math.floor(this.lifesCounter)
             }
         })
@@ -326,7 +329,7 @@ const whaleShipApp = {
 
                     this.pirates.forEach(elm => elm.bullets.splice(i, 1))
 
-                    this.lifesCounter -= .5
+                    // this.lifesCounter -= .5
                     document.querySelector('#lifes-counter').innerHTML = Math.floor(this.lifesCounter)
                 }
             })

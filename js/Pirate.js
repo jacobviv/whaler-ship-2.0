@@ -6,9 +6,9 @@ class Pirate {
         this.canvasSize = canvasSize
 
         this.image = new Image()
-        this.image.src = './img/pirate-ship.png'
+        this.image.src = './img/pirate.png'
 
-        this.pirateSize = { w: 65, h: 37 }
+        this.pirateSize = { w: 148, h: 94 }
         this.piratePos = {
             x: this.canvasSize.w + this.pirateSize.w,
             y: Math.random() * (this.canvasSize.h - this.pirateSize.h * 2) + this.pirateSize.h
